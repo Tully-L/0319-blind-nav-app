@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:http/http.dart' as http;
 
 class VisionService {
-  // 硅基流动 SiliconFlow API（OpenAI 兼容格式）
+  // 阿里云 DashScope API（OpenAI 兼容格式）
   static const String _apiUrl =
-      'https://api.siliconflow.cn/v1/chat/completions';
-  static String? _apiKey = 'sk-ibatkyryrbxtzzwewedmcomitiyxevexvjywxxekmoqihgyl';
+      'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
+  static String? _apiKey = 'sk-2b62e8fe7b4341339298a8b3867b9e6a';
 
   static void setApiKey(String key) => _apiKey = key;
 
@@ -29,7 +29,7 @@ class VisionService {
           'Authorization': 'Bearer $_apiKey',
         },
         body: jsonEncode({
-          'model': 'Qwen/Qwen2.5-VL-72B-Instruct',
+          'model': 'qwen-vl-plus',
           'messages': [
             {
               'role': 'user',
